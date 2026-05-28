@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMI Window Blinds & Coverings | Vancouver & Fraser Valley</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage: #B8C9B0;
+  --sage-light: #E8F0E4;
+  --sage-dark: #7A9B70;
+  --blush: #F2D9D9;
+  --blush-light: #FAF0F0;
+  --blush-dark: #C9908F;
+  --peach: #F5DCC8;
+  --peach-light: #FBF3EC;
+  --lavender: #D8D0E8;
+  --lavender-light: #F0EDF8;
+  --sky: #C8DCF0;
+  --sky-light: #EFF5FB;
+  --cream: #FBF8F2;
+  --warm-white: #FFFCF8;
+  --charcoal: #3A3A3A;
+  --text-mid: #6B6B6B;
+  --text-light: #9A9A9A;
+  --gold: #C4933A;
+  --brown: #8A5C3C;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--warm-white); color: var(--charcoal); overflow-x: hidden; line-height: 1.7; }
+
+/* ─── RESET ─── */
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,252,248,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184,201,176,0.3);
+  transition: all 0.3s;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; }
+.logo-icon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.logo-text { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.3px; }
+.logo-text span { color: var(--sage-dark); }
+nav ul { display: flex; gap: 32px; }
+nav ul a { font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--text-mid); transition: color 0.2s; }
+nav ul a:hover { color: var(--sage-dark); }
+.nav-cta { background: var(--sage-dark) !important; color: white !important; padding: 10px 22px; border-radius: 50px; font-size: 13px !important; letter-spacing: 0.04em !important; transition: all 0.2s !important; }
+.nav-cta:hover { background: var(--charcoal) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(122,155,112,0.4); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-top: 88px;
+  overflow: hidden;
+  position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--cream) 50%, var(--peach-light) 100%);
+  z-index: 0;
+}
+.hero-text { padding: 80px 60px 80px 80px; position: relative; z-index: 2; }
+.hero-badge-top {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; border: 1px solid var(--sage);
+  border-radius: 50px; padding: 8px 16px; margin-bottom: 24px;
+  font-size: 12px; font-weight: 700; color: var(--sage-dark); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero-badge-top span { width: 6px; height: 6px; background: var(--sage-dark); border-radius: 50%; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 4.5vw, 64px); font-weight: 700; line-height: 1.1; color: var(--charcoal); margin-bottom: 22px; }
+h1 em { font-style: italic; color: var(--sage-dark); }
+.hero-sub { font-size: 17px; color: var(--text-mid); line-height: 1.75; max-width: 440px; margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--sage-dark); color: white; padding: 15px 32px;
+  border-radius: 50px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.25s; box-shadow: 0 4px 20px rgba(122,155,112,0.35);
+}
+.btn-primary:hover { background: var(--charcoal); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(58,58,58,0.25); }
+.btn-outline {
+  color: var(--charcoal); padding: 14px 28px; border-radius: 50px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
+  border: 2px solid rgba(58,58,58,0.2); display: inline-block; transition: all 0.25s;
+}
+.btn-outline:hover { border-color: var(--charcoal); background: rgba(58,58,58,0.04); }
+.hero-visual { height: 100vh; position: relative; overflow: hidden; z-index: 1; }
+.hero-photo {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&auto=format&fit=crop&q=80') center/cover no-repeat;
+}
+.hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, transparent 40%, rgba(235,245,230,0.6) 100%); }
+.hero-stat-card {
+  position: absolute; bottom: 60px; right: 40px; z-index: 2;
+  background: white; border-radius: 20px; padding: 22px 26px;
+  box-shadow: 0 12px 48px rgba(58,58,58,0.12);
+  text-align: center; min-width: 160px;
+}
+.hero-stat-card .num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--sage-dark); line-height: 1; }
+.hero-stat-card .lbl { font-size: 12px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+.hero-stat-card2 {
+  position: absolute; top: 120px; right: 40px; z-index: 2;
+  background: white; border-radius: 16px; padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(58,58,58,0.1);
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-stat-card2 .icon { width: 40px; height: 40px; background: var(--blush); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.hero-stat-card2 .info .val { font-size: 16px; font-weight: 700; color: var(--charcoal); }
+.hero-stat-card2 .info .lab { font-size: 11px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ─── STRIP ─── */
+.strip {
+  background: var(--charcoal); padding: 18px 60px;
+  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+}
+.strip-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; }
+.strip-dot { width: 7px; height: 7px; background: var(--sage); border-radius: 50%; flex-shrink: 0; }
+
+/* ─── SECTION BASE ─── */
+section { padding: 100px 80px; }
+.s-label { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.s-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--sage-dark); border-radius: 2px; }
+.s-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 3vw, 48px); font-weight: 700; color: var(--charcoal); line-height: 1.15; margin-bottom: 18px; }
+.s-title em { font-style: italic; color: var(--sage-dark); }
+.s-desc { font-size: 16px; color: var(--text-mid); max-width: 520px; line-height: 1.75; }
+
+/* ─── PRODUCTS ─── */
+#products { background: var(--cream); }
+.products-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.p-card {
+  background: white; border-radius: 20px; overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; cursor: default;
+  border: 1px solid rgba(184,201,176,0.2);
+}
+.p-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(58,58,58,0.1); }
+.p-card-photo { height: 180px; overflow: hidden; position: relative; }
+.p-card-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.p-card:hover .p-card-photo img { transform: scale(1.06); }
+.p-card-photo .p-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: white; border-radius: 50px; padding: 4px 12px;
+  font-size: 11px; font-weight: 800; color: var(--sage-dark); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.p-card-body { padding: 22px 22px 26px; }
+.p-card-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+.p-card-body p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+/* ─── WHY ─── */
+#why { background: var(--blush-light); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.why-list { display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
+.why-item { display: flex; gap: 18px; align-items: flex-start; }
+.why-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: rgba(196,147,58,0.2); line-height: 1; flex-shrink: 0; width: 50px; }
+.why-item h3 { font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 5px; }
+.why-item p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+.why-photo { border-radius: 24px; overflow: hidden; position: relative; box-shadow: 0 20px 60px rgba(58,58,58,0.12); }
+.why-photo img { width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover; }
+.why-photo-badge {
+  position: absolute; bottom: 24px; left: 24px;
+  background: white; border-radius: 16px; padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(58,58,58,0.1);
+}
+.why-photo-badge .num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--sage-dark); line-height: 1; }
+.why-photo-badge .lbl { font-size: 11px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ─── GALLERY ─── */
+#gallery { background: var(--warm-white); }
+.gallery-head { margin-bottom: 48px; }
+.gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 14px; border-radius: 20px; overflow: hidden; }
+.g-item { position: relative; overflow: hidden; cursor: pointer; border-radius: 12px; }
+.g-item:first-child { grid-row: 1 / 3; }
+.g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s; }
+.g-item:hover img { transform: scale(1.07); }
+.g-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 18px 16px;
+  background: linear-gradient(transparent, rgba(40,40,40,0.75));
+  color: white; font-size: 13px; font-weight: 700; letter-spacing: 0.03em;
+  transform: translateY(100%); transition: transform 0.3s;
+}
+.g-item:hover .g-label { transform: translateY(0); }
+
+/* ─── TESTIMONIALS ─── */
+#testimonials { background: var(--charcoal); color: white; }
+#testimonials .s-label { color: var(--sage); }
+#testimonials .s-label::before { background: var(--sage); }
+#testimonials .s-title { color: white; }
+.t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
+.t-card {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 30px 26px; transition: background 0.3s;
+}
+.t-card:hover { background: rgba(255,255,255,0.1); }
+.t-stars { color: var(--gold); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
+.t-text { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 22px; font-style: italic; }
+.t-author { font-size: 14px; font-weight: 700; color: white; }
+.t-loc { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+/* ─── SERVICE AREA ─── */
+#area { background: var(--lavender-light); padding: 80px; text-align: center; }
+#area .s-label { justify-content: center; }
+#area .s-title { text-align: center; }
+.cities { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
+.city-pill {
+  background: white; border: 1px solid var(--lavender);
+  border-radius: 50px; padding: 10px 22px;
+  font-size: 14px; font-weight: 700; color: var(--charcoal);
+  transition: all 0.2s;
+}
+.city-pill:hover { background: var(--lavender); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(120,100,180,0.15); }
+
+/* ─── CONTACT ─── */
+#contact { background: var(--peach-light); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-info { margin-top: 32px; display: flex; flex-direction: column; gap: 24px; }
+.c-item { display: flex; align-items: flex-start; gap: 16px; }
+.c-icon {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.c-icon.phone { background: var(--sage-light); }
+.c-icon.email { background: var(--blush); }
+.c-icon.map { background: var(--lavender-light); }
+.c-lbl { font-size: 11px; font-weight: 800; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+.c-val { font-size: 16px; font-weight: 700; color: var(--charcoal); transition: color 0.2s; }
+.c-val:hover { color: var(--sage-dark); }
+.contact-form {
+  background: white; border-radius: 24px; padding: 44px 40px;
+  box-shadow: 0 8px 48px rgba(58,58,58,0.08);
+}
+.form-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--charcoal); margin-bottom: 28px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 7px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid #EDE8E0; border-radius: 10px;
+  font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--charcoal);
+  background: var(--warm-white); outline: none; transition: border-color 0.2s;
+  appearance: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage-dark); }
+.form-group textarea { height: 90px; resize: none; }
+.form-submit {
+  width: 100%; background: var(--sage-dark); color: white; border: none;
+  padding: 16px; border-radius: 50px; font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer;
+  transition: all 0.25s; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.form-submit:hover { background: var(--charcoal); transform: translateY(-1px); box-shadow: 0 6px 22px rgba(122,155,112,0.4); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--charcoal); padding: 56px 80px 36px;
+}
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-brand .brand-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 10px; }
+.footer-brand .brand-name span { color: var(--sage); }
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 240px; }
+.footer-col h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 10px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--sage); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; flex-wrap: wrap; gap: 16px; }
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); }
+.footer-contact-detail { font-size: 13px; color: rgba(255,255,255,0.5); }
+.footer-contact-detail a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+.footer-contact-detail a:hover { color: white; }
+
+/* ─── FADE UP ─── */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s, transform 0.7s; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  nav { padding: 16px 28px; }
+  nav ul { display: none; }
+  section { padding: 70px 28px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-text { padding: 60px 28px 40px; }
+  .hero-visual { height: 360px; }
+  .hero-stat-card { bottom: 20px; right: 20px; }
+  .hero-stat-card2 { top: 16px; right: 16px; }
+  .hero::before { bottom: 0; }
+  .products-head { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  #why { grid-template-columns: 1fr; padding: 70px 28px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .g-item:first-child { grid-row: auto; }
+  .t-grid { grid-template-columns: 1fr; }
+  #testimonials { padding: 70px 28px; }
+  #area { padding: 70px 28px; }
+  #contact { grid-template-columns: 1fr; padding: 70px 28px; }
+  footer { padding: 48px 28px 28px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .strip { padding: 18px 28px; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap">
+    <div class="logo-icon">🪟</div>
+    <div class="logo-text">SMI <span>Blinds</span></div>
+  </div>
+  <ul>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-badge-top"><span></span>Vancouver &amp; Fraser Valley</div>
+    <h1>Beautiful Blinds,<br><em>Perfectly Fitted</em><br>Every Time.</h1>
+    <p class="hero-sub">Expert window coverings for your home — zebra, blackout, roller, custom &amp; more. Fast turnaround, honest pricing, professional installation.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">✨ Get a Free Estimate</a>
+      <a href="#products" class="btn-outline">Our Products →</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo"></div>
+    <div class="hero-stat-card2">
+      <div class="icon">⭐</div>
+      <div class="info">
+        <div class="val">5.0 Stars</div>
+        <div class="lab">Google Rating</div>
+      </div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="num">500<sup style="font-size:22px">+</sup></div>
+      <div class="lbl">Homes Served</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item"><span class="strip-dot"></span>Free In-Home Estimates</div>
+  <div class="strip-item"><span class="strip-dot"></span>Professional Installation</div>
+  <div class="strip-item"><span class="strip-dot"></span>Fast Turnaround</div>
+  <div class="strip-item"><span class="strip-dot"></span>Surrey · Langley · Burnaby · Coquitlam</div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-head fade-up">
+    <div>
+      <p class="s-label">What We Offer</p>
+      <h2 class="s-title">Our Window<br><em>Covering Solutions</em></h2>
+    </div>
+    <p class="s-desc" style="margin-top:8px">From elegant zebra blinds to full blackout — every style custom-fitted and professionally installed for your home.</p>
+  </div>
+  <div class="products-grid">
+
+    <div class="p-card fade-up">
+      <div class="p-card-photo">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&auto=format&fit=crop&q=80" alt="Zebra Blinds" loading="lazy">
+        <div class="p-tag">Most Popular</div>
+      </div>
+      <div class="p-card-body">
+        <h3>Zebra Blinds</h3>
+        <p>Modern dual-layer blinds that alternate between sheer and solid fabric — full control over light &amp; privacy with a sleek, contemporary finish.</p>
+      </div>
+    </div>
+
+    <div class="p-card fade-up" style="transition-delay:0.1s">
+      <div class="p-card-photo">
+        <img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=600&auto=format&fit=crop&q=80" alt="Blackout Blinds" loading="lazy">
+        <div class="p-tag">Best for Sleep</div>
+      </div>
+      <div class="p-card-body">
+        <h3>Blackout Blinds</h3>
+        <p>Complete light-blocking coverage perfect for bedrooms, nurseries &amp; media rooms. Available in dozens of colours and textures.</p>
+      </div>
+    </div>
+
+    <div class="p-card fade-up" style="transition-delay:0.2s">
+      <div class="p-card-photo">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" alt="Roller Blinds" loading="lazy">
+      </div>
+      <div class="p-card-body">
+        <h3>Roller Blinds</h3>
+        <p>Clean, minimal, and incredibly practical. Smooth operation and a sleek look that works with any home decor style.</p>
+      </div>
+    </div>
+
+    <div class="p-card fade-up" style="transition-delay:0.3s">
+      <div class="p-card-photo">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop&q=80" alt="Cordless Blinds" loading="lazy">
+        <div class="p-tag">Child-Safe</div>
+      </div>
+      <div class="p-card-body">
+        <h3>Cordless Blinds</h3>
+        <p>Safe, clean, and effortless. Ideal for families with young children — polished cord-free look throughout your home.</p>
+      </div>
+    </div>
+
+    <div class="p-card fade-up" style="transition-delay:0.4s">
+      <div class="p-card-photo">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="Custom Window Coverings" loading="lazy">
+        <div class="p-tag">Custom Made</div>
+      </div>
+      <div class="p-card-body">
+        <h3>Custom Coverings</h3>
+        <p>Every window is unique. We offer fully custom solutions — precise measurements, specialty fabrics, and motorized options.</p>
+      </div>
+    </div>
+
+    <div class="p-card fade-up" style="transition-delay:0.5s">
+      <div class="p-card-photo">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&auto=format&fit=crop&q=80" alt="Professional Installation" loading="lazy">
+        <div class="p-tag">Included</div>
+      </div>
+      <div class="p-card-body">
+        <h3>Professional Installation</h3>
+        <p>We don't just supply — we install. Our team handles everything from measuring to mounting so your blinds fit perfectly.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div>
+    <p class="s-label">Why Choose SMI</p>
+    <h2 class="s-title">We Make Every<br>Window <em>Count</em></h2>
+    <p class="s-desc">A local, owner-operated business that genuinely cares about quality and your complete satisfaction.</p>
+    <div class="why-list">
+      <div class="why-item fade-up">
+        <span class="why-num">01</span>
+        <div><h3>Fast Response Times</h3><p>We respond quickly and show up when we say we will. Most estimates happen within days — no long waits.</p></div>
+      </div>
+      <div class="why-item fade-up" style="transition-delay:0.1s">
+        <span class="why-num">02</span>
+        <div><h3>Competitive Pricing</h3><p>Premium quality doesn't require premium prices. Honest, transparent quotes that fit your budget.</p></div>
+      </div>
+      <div class="why-item fade-up" style="transition-delay:0.2s">
+        <span class="why-num">03</span>
+        <div><h3>Local &amp; Trusted</h3><p>We serve Vancouver and the Fraser Valley. We know these communities and take pride in our local reputation.</p></div>
+      </div>
+      <div class="why-item fade-up" style="transition-delay:0.3s">
+        <span class="why-num">04</span>
+        <div><h3>Clean Professional Installs</h3><p>Every install is done carefully. We leave your home exactly as we found it — just with better-looking windows.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="fade-up">
+    <div class="why-photo">
+      <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=700&auto=format&fit=crop&q=80" alt="Beautiful window treatment" loading="lazy">
+      <div class="why-photo-badge">
+        <div class="num">100%</div>
+        <div class="lbl">Satisfaction Goal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-head fade-up">
+    <p class="s-label">Our Work</p>
+    <h2 class="s-title">Transformations We're<br><em>Proud Of</em></h2>
+  </div>
+  <div class="gallery-grid fade-up">
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&auto=format&fit=crop&q=80" alt="Living room zebra blinds Surrey" loading="lazy">
+      <div class="g-label">Living Room · Zebra Blinds · Surrey</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=500&auto=format&fit=crop&q=80" alt="Bedroom blackout Langley" loading="lazy">
+      <div class="g-label">Bedroom · Blackout · Langley</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format&fit=crop&q=80" alt="Kitchen roller blinds Burnaby" loading="lazy">
+      <div class="g-label">Kitchen · Roller Blinds · Burnaby</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=500&auto=format&fit=crop&q=80" alt="Home office cordless Coquitlam" loading="lazy">
+      <div class="g-label">Home Office · Cordless · Coquitlam</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&auto=format&fit=crop&q=80" alt="Custom install New Westminster" loading="lazy">
+      <div class="g-label">Custom Install · New Westminster</div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:28px;font-size:14px;color:var(--text-light)">More photos on request — <a href="#contact" style="color:var(--sage-dark);font-weight:700">contact us</a></p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <p class="s-label">Happy Customers</p>
+  <h2 class="s-title">What Our Clients Say</h2>
+  <div class="t-grid">
+    <div class="t-card fade-up">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Baani was incredibly professional. He came out the next day, measured everything perfectly, and the blinds were installed within a week. Our living room is completely transformed."</p>
+      <p class="t-author">Sarah M.</p>
+      <p class="t-loc">Surrey, BC</p>
+    </div>
+    <div class="t-card fade-up" style="transition-delay:0.1s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Best price in Langley and the quality is exceptional. The zebra blinds are exactly what I wanted — stylish and functional. Would recommend to anyone renovating."</p>
+      <p class="t-author">Kevin T.</p>
+      <p class="t-loc">Langley, BC</p>
+    </div>
+    <div class="t-card fade-up" style="transition-delay:0.2s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Fast, clean, and super easy to deal with. The blackout blinds in our bedroom are life-changing. Already recommended SMI to our neighbours and family."</p>
+      <p class="t-author">Priya &amp; David R.</p>
+      <p class="t-loc">Burnaby, BC</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="area">
+  <p class="s-label">Where We Serve</p>
+  <h2 class="s-title">Proudly Serving the<br><em>Lower Mainland</em></h2>
+  <p class="s-desc" style="max-width:520px;margin:0 auto 8px;text-align:center">We come to you for free in-home estimates across Metro Vancouver and the Fraser Valley.</p>
+  <div class="cities">
+    <div class="city-pill">📍 Surrey</div>
+    <div class="city-pill">📍 Langley</div>
+    <div class="city-pill">📍 Burnaby</div>
+    <div class="city-pill">📍 Coquitlam</div>
+    <div class="city-pill">📍 New Westminster</div>
+    <div class="city-pill">📍 Delta</div>
+    <div class="city-pill">📍 Maple Ridge</div>
+    <div class="city-pill">📍 Port Moody</div>
+    <div class="city-pill">📍 Pitt Meadows</div>
+    <div class="city-pill">📍 Abbotsford</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <p class="s-label">Get In Touch</p>
+    <h2 class="s-title">Ready for a<br><em>Free Estimate?</em></h2>
+    <p class="s-desc">We'll come to you, measure every window, and give you a no-obligation quote on the same day.</p>
+    <div class="contact-info">
+      <div class="c-item fade-up">
+        <div class="c-icon phone">📞</div>
+        <div>
+          <p class="c-lbl">Phone / Text</p>
+          <a href="tel:7788999603" class="c-val">778-899-9603</a>
+        </div>
+      </div>
+      <div class="c-item fade-up" style="transition-delay:0.1s">
+        <div class="c-icon email">✉️</div>
+        <div>
+          <p class="c-lbl">Email</p>
+          <a href="mailto:smiblinds@gmail.com" class="c-val">smiblinds@gmail.com</a>
+        </div>
+      </div>
+      <div class="c-item fade-up" style="transition-delay:0.2s">
+        <div class="c-icon map">📍</div>
+        <div>
+          <p class="c-lbl">Service Area</p>
+          <span class="c-val" style="cursor:default">Vancouver &amp; Fraser Valley, BC</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:40px;padding:24px;background:white;border-radius:16px;border:1px solid rgba(184,201,176,0.3)">
+      <p style="font-size:13px;color:var(--text-mid);line-height:1.7">
+        <strong style="color:var(--charcoal)">Hours:</strong> Monday–Saturday 9am–6pm<br>
+        <strong style="color:var(--charcoal)">Response:</strong> We aim to reply within 2 hours<br>
+        <strong style="color:var(--charcoal)">Installation:</strong> Usually within 5–10 days
+      </p>
+    </div>
+  </div>
+  <div class="contact-form fade-up">
+    <p class="form-title">Request a Free Estimate</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Jane">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Smith">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="604-XXX-XXXX">
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="jane@email.com">
+    </div>
+    <div class="form-group">
+      <label>Your City</label>
+      <select>
+        <option value="">Select your city…</option>
+        <option>Surrey</option>
+        <option>Langley</option>
+        <option>Burnaby</option>
+        <option>Coquitlam</option>
+        <option>New Westminster</option>
+        <option>Delta</option>
+        <option>Maple Ridge</option>
+        <option>Port Moody</option>
+        <option>Abbotsford</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message (optional)</label>
+      <textarea placeholder="Tell us about your windows — how many rooms, type of blinds you're interested in, etc."></textarea>
+    </div>
+    <button class="form-submit" onclick="alert('Thank you! Baani will contact you within 24 hours to schedule your free estimate. You can also call or text: 778-899-9603')">
+      ✉️ Request Free Estimate
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-name">SMI <span>Window Blinds</span></div>
+      <p>Professional window coverings for homes across Vancouver and the Fraser Valley. Quality, care, and craftsmanship in every install.</p>
+      <div style="margin-top:20px;display:flex;gap:14px">
+        <a href="tel:7788999603" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);color:white;padding:9px 16px;border-radius:50px;font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,0.15);transition:all 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">📞 778-899-9603</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#products">Zebra Blinds</a>
+      <a href="#products">Blackout Blinds</a>
+      <a href="#products">Roller Blinds</a>
+      <a href="#products">Cordless Blinds</a>
+      <a href="#products">Custom Coverings</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service Areas</h4>
+      <a href="#area">Surrey</a>
+      <a href="#area">Langley</a>
+      <a href="#area">Burnaby</a>
+      <a href="#area">Coquitlam</a>
+      <a href="#area">New Westminster</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:7788999603">778-899-9603</a>
+      <a href="mailto:smiblinds@gmail.com">smiblinds@gmail.com</a>
+      <a href="#contact">Free Estimate →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SMI Window Blinds &amp; Coverings. All rights reserved.</p>
+    <div class="footer-contact-detail">
+      Questions? <a href="tel:7788999603">778-899-9603</a> · <a href="mailto:smiblinds@gmail.com">smiblinds@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
