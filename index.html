@@ -156,6 +156,29 @@ img{display:block;width:100%;object-fit:cover}
 .hsc-n{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--navy);line-height:1}
 .hsc-s{color:var(--amber);font-size:14px;letter-spacing:2px;margin:4px 0 2px;display:block}
 .hsc-l{font-size:10px;color:var(--text3);font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+#hero.hero--video{background:var(--navy-d)}
+#hero.hero--video::before,#hero.hero--video::after{display:none}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(30,34,51,.72) 0%,rgba(30,34,51,.42) 42%,rgba(30,34,51,.18) 65%,rgba(30,34,51,.38) 100%)}
+.hero--video .hero-w{position:relative;z-index:2}
+.hero-form-panel{position:relative}
+.form-card.form-card--glass{background:rgba(255,255,255,.35);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.55);box-shadow:0 24px 70px rgba(15,17,26,.35)}
+.form-card--glass .fg input,.form-card--glass .fg select,.form-card--glass .fg textarea{background:rgba(250,244,235,.5);border:1.5px solid rgba(255,255,255,.7);color:var(--navy);font-weight:700}
+.form-card--glass .fg input::placeholder,.form-card--glass .fg textarea::placeholder{color:var(--navy-m);font-weight:700;opacity:.75}
+.form-card--glass .fg select{color:var(--navy);font-weight:700}
+.form-card--glass .fg select option{color:var(--text);font-weight:700}
+.form-card--glass .fg input:focus,.form-card--glass .fg select:focus,.form-card--glass .fg textarea:focus{background:rgba(250,244,235,.7);border-color:#fff}
+.form-card--glass .fg label{color:#fff;font-weight:700}
+.form-card--glass .f-note{color:#fff;font-weight:700}
+.form-card--glass .f-btn{opacity:1;background:var(--brown)}
+.form-card-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.form-card-title{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:18px}
+.hero--video .hero-h1{color:#fff}
+.hero--video .hero-sub{color:rgba(255,255,255,.86)}
+.hero--video .trust-pill{color:rgba(255,255,255,.92)}
+.hero--video .trust-div{background:rgba(255,255,255,.3)}
+.hero--video .btn-outline{color:#fff;border-color:rgba(255,255,255,.5)}
+.hero--video .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.12)}
 #mq{background:var(--navy);padding:13px 0;overflow:hidden}
 .mq-t{display:flex;animation:mqscroll 30s linear infinite;width:max-content}
 .mq-i{display:flex;align-items:center;gap:24px;padding:0 24px;white-space:nowrap}
@@ -295,6 +318,9 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
   .nav-w{padding:0 22px}.nav-links{display:none}.hbg{display:flex}
   .sec{padding:80px 0}.sec-w{padding:0 22px}.hero-w{padding-left:22px;padding-right:22px}
   .hero-grid{grid-template-columns:1fr;gap:36px}.hero-right{display:none}
+  .hero--video{min-height:auto;padding:calc(var(--nav-h) + 36px) 0 44px}
+  .hero--video .hero-right{display:block;position:static;margin-top:8px}
+  .hero--video .hero-w{padding-top:0}
   .prod-head{grid-template-columns:1fr;gap:14px}.prod-grid{grid-template-columns:repeat(2,1fr)}.prod-row2{grid-template-columns:repeat(2,1fr)}
   .why-grid{grid-template-columns:1fr;gap:44px}.why-img-wrap{height:360px}.why-img-float{right:12px;width:48%;height:46%}.why-chip{left:12px}
   .gal-head{flex-direction:column;align-items:flex-start;gap:14px}
@@ -390,7 +416,11 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
   <a href="tel:7789320696" class="mphone" onclick="cm()">778-932-0696</a>
   <a href="#contact" class="mcta" onclick="cm()">Free Estimate</a>
 </div>
-<section id="hero">
+<section id="hero" class="hero--video">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="vancouver zebra install.png">
+    <source src="Smiloop.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
   <div class="hero-w">
     <div class="hero-grid">
       <div>
@@ -410,22 +440,18 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
         </div>
       </div>
       <div class="hero-right">
-        <div class="hero-float">
-          <div class="hero-float-icon">&#128222;</div>
-          <div><p class="hero-float-label">Call Anytime</p><p class="hero-float-val">778-932-0696</p></div>
-        </div>
-        <div class="hero-img-card">
-          <img src="vancouver zebra install.png" alt="Custom zebra blinds installed in living room Vancouver BC condo">
-          <div class="hero-img-overlay"></div>
-          <div class="hero-img-tag">
-            <div class="hero-img-tag-icon">&#10022;</div>
-            <div><p class="hero-img-tag-t">Premium Installation</p><p class="hero-img-tag-s">Custom-fit to every window</p></div>
+        <div class="hero-form-panel">
+          <div class="form-card form-card--glass">
+            <p class="form-card-eyebrow">Request a Free In-Home Consultation</p>
+            <form id="heroForm" action="https://formsubmit.co/smiblinds@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Free Estimate Request - SMI Blinds (Hero Form)"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://smiblinds.com/thank-you.html"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+              <div class="frow"><div class="fg"><label>First Name</label><input type="text" id="hfn" name="first_name" placeholder="Sarah" required></div><div class="fg"><label>Last Name</label><input type="text" id="hln" name="last_name" placeholder="Mitchell"></div></div>
+              <div class="frow"><div class="fg"><label>Phone</label><input type="tel" id="hph" name="phone" placeholder="778-000-0000"></div><div class="fg"><label>Email</label><input type="email" id="hem" name="email" placeholder="you@email.com" required></div></div>
+              <div class="frow"><div class="fg"><label>City</label><input type="text" id="hct" name="city" placeholder="Vancouver"></div><div class="fg"><label>Blind Type</label><select id="hbt" name="blind_type"><option value="" disabled selected>Select a type</option><option>Zebra Blinds</option><option>Roller Shades</option><option>Blackout Blinds</option><option>Motorized Blinds</option><option>Faux Wood Blinds</option><option>Honeycomb Blinds</option><option>Vertical Blinds</option><option>Not Sure Yet</option></select></div></div>
+              <div class="fg"><label>Message</label><textarea id="hmsg" name="message" placeholder="Tell us about your project &mdash; number of windows, rooms, style preferences&hellip;"></textarea></div>
+              <button class="f-btn" type="submit">Request Free Estimate &rarr;</button>
+              <p class="f-note">We reply within a few hours &nbsp;&middot;&nbsp; No obligation &nbsp;&middot;&nbsp; Serving Metro Vancouver</p>
+            </form>
           </div>
-        </div>
-        <div class="hero-stars-card">
-          <div class="hsc-n">5.0</div>
-          <span class="hsc-s">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <div class="hsc-l">Google Reviews</div>
         </div>
       </div>
     </div>
