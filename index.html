@@ -84,6 +84,10 @@ img{display:block;width:100%;object-fit:cover}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--brown3);border-radius:3px}
 #nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);display:flex;align-items:center;transition:background .45s,box-shadow .45s,border-color .45s;border-bottom:1px solid transparent}
 #nav.scrolled{background:rgba(253,248,242,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--sh-sm);border-bottom-color:var(--line)}
+#nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.95)}
+#nav:not(.scrolled) .nav-links a:hover{color:#fff}
+#nav:not(.scrolled) .nav-links a::after{background:#fff}
+#nav:not(.scrolled) .hbg span{background:#fff}
 .nav-w{max-width:1360px;margin:0 auto;padding:0 44px;width:100%;display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:46px;width:auto;transition:transform .35s var(--ease)}
 .nav-logo:hover img{transform:scale(1.04)}
