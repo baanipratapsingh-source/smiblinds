@@ -417,9 +417,20 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
   <a href="#contact" class="mcta" onclick="cm()">Free Estimate</a>
 </div>
 <section id="hero" class="hero--video">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="vancouver zebra install.png">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="vancouver zebra install.png">
     <source src="Smiloop.mp4" type="video/mp4">
   </video>
+  <script>
+  (function(){
+    var v=document.getElementById('heroVideo');
+    if(!v) return;
+    var tryPlay=function(){var p=v.play();if(p&&p.catch)p.catch(function(){});};
+    tryPlay();
+    document.addEventListener('touchstart',tryPlay,{once:true,passive:true});
+    document.addEventListener('scroll',tryPlay,{once:true,passive:true});
+    document.addEventListener('click',tryPlay,{once:true,passive:true});
+  })();
+  </script>
   <div class="hero-video-overlay"></div>
   <div class="hero-w">
     <div class="hero-grid">
