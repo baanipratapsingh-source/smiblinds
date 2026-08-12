@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+      if(location.pathname.replace(/\/+$/,'').endsWith('/index.html')){
+        history.replaceState(null,'',location.pathname.replace(/index\.html$/,'')+location.search+location.hash);
+      }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZW42P5QJE"></script>
     <script>
