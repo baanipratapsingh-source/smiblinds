@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369566452"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18369566452');
+  </script>
+    <!-- Event snippet for Click to call conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18369566452/8ntMCNCnjN8cEPStpbdE',
+            'value': 1.0,
+            'currency': 'CAD',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blind Cleaning &amp; Total Care Guide | Smiblinds</title>
@@ -101,7 +126,7 @@ footer a{color:var(--brown);font-weight:600}
       SMI Window Blinds &amp; Coverings
     </a>
     <div class="nav-right">
-      <a class="nav-phone" href="tel:+17789320696">&#9742; 778-932-0696</a>
+      <a class="nav-phone" href="tel:+17789320696" onclick="return gtag_report_conversion('tel:+17789320696');">&#9742; 778-932-0696</a>
       <a class="nav-cta" href="https://smiblinds.com/custom-blinds-vancouver/">Free Estimate</a>
     </div>
   </div>
@@ -201,7 +226,7 @@ footer a{color:var(--brown);font-weight:600}
     </div>
     <div class="cta-buttons">
       <a class="btn-fill" href="https://smiblinds.com/custom-blinds-vancouver/">Get a Free Estimate</a>
-      <a class="btn-outline" href="tel:+17789320696">&#9742; Call 778-932-0696</a>
+      <a class="btn-outline" href="tel:+17789320696" onclick="return gtag_report_conversion('tel:+17789320696');">&#9742; Call 778-932-0696</a>
     </div>
   </div>
 </div>
