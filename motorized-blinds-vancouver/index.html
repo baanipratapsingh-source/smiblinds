@@ -155,6 +155,30 @@ img{display:block;width:100%;object-fit:cover}
 #hero{position:relative;overflow:hidden;background:var(--cream);padding:64px 0 0}
 #hero::before{content:'';position:absolute;right:-180px;top:-120px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,var(--pale) 0%,transparent 70%);z-index:0}
 #hero::after{content:'';position:absolute;left:-100px;bottom:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,var(--cream3) 0%,transparent 70%);z-index:0}
+#hero.hero--video{background:var(--navy-d);padding:0}
+#hero.hero--video::before,#hero.hero--video::after{display:none}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(30,34,51,.72) 0%,rgba(30,34,51,.42) 42%,rgba(30,34,51,.18) 65%,rgba(30,34,51,.38) 100%)}
+.hero--video .hero-w{padding:calc(var(--nav-h) + 40px) 44px 80px;position:relative;z-index:2}
+.hero--video .hero-grid{min-height:calc(100vh - var(--nav-h) - 120px)}
+.hero--video .hero-h1{color:#fff}
+.hero--video .hero-sub{color:rgba(255,255,255,.86)}
+.hero--video .trust-pill{color:rgba(255,255,255,.92)}
+.hero--video .trust-div{background:rgba(255,255,255,.3)}
+.hero--video .btn-outline{color:#fff;border-color:rgba(255,255,255,.5)}
+.hero--video .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+.hero-form-panel{position:relative}
+.form-card.form-card--glass{background:rgba(255,255,255,.35);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.55);box-shadow:0 24px 70px rgba(15,17,26,.35)}
+.form-card--glass .fg input,.form-card--glass .fg select,.form-card--glass .fg textarea{background:rgba(250,244,235,.5);border:1.5px solid rgba(255,255,255,.7);color:var(--navy);font-weight:700}
+.form-card--glass .fg input::placeholder,.form-card--glass .fg textarea::placeholder{color:var(--navy-m);font-weight:700;opacity:.75}
+.form-card--glass .fg select{color:var(--navy);font-weight:700}
+.form-card--glass .fg select option{color:var(--text);font-weight:700}
+.form-card--glass .fg input:focus,.form-card--glass .fg select:focus,.form-card--glass .fg textarea:focus{background:rgba(250,244,235,.7);border-color:#fff}
+.form-card--glass .fg label{color:#fff;font-weight:700}
+.form-card--glass .f-note{color:#fff;font-weight:700}
+.form-card--glass .f-btn{opacity:1;background:var(--brown)}
+.form-card-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+@media(max-width:900px){.hero--video{min-height:auto;padding:calc(var(--nav-h) + 36px) 0 44px}.hero--video .hero-right{display:block;position:static;margin-top:8px}.hero--video .hero-w{padding-top:0}}
 .hero-w{max-width:1360px;margin:0 auto;padding:52px 44px 80px;width:100%;position:relative;z-index:1}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--pale);border:1px solid rgba(139,69,19,.18);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brown);margin-bottom:28px}
@@ -403,18 +427,33 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
 <div class="bc">
   <div class="bc-w"><a href="../">Home</a> &nbsp;/&nbsp; Motorized Blinds Vancouver</div>
 </div>
-<section id="hero">
+<section id="hero" class="hero--video">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="../blind install.png">
+    <source src="../Smiloop.mp4" type="video/mp4">
+  </video>
+  <script>
+  (function(){
+    var v=document.getElementById('heroVideo');
+    if(!v) return;
+    var tryPlay=function(){var p=v.play();if(p&&p.catch)p.catch(function(){});};
+    tryPlay();
+    document.addEventListener('touchstart',tryPlay,{once:true,passive:true});
+    document.addEventListener('scroll',tryPlay,{once:true,passive:true});
+    document.addEventListener('click',tryPlay,{once:true,passive:true});
+  })();
+  </script>
+  <div class="hero-video-overlay"></div>
   <div class="hero-w">
     <div class="hero-grid">
       <div>
-        <div class="hero-badge rv"><div class="badge-dot"></div>Vancouver's Motorized Blinds Specialists</div>
-        <h1 class="hero-h1 rv d1">Custom <em>Motorized Blinds</em> <br>Vancouver</h1>
-        <p class="hero-sub rv d2">Remote, app and voice-controlled blinds &mdash; available across our full range of zebra, roller, blackout, faux wood, honeycomb and vertical blinds. Wired, battery, rechargeable and solar power options, with Alexa, Google Home and Apple HomeKit compatibility. Free in-home measurement and professional installation.</p>
-        <div class="hero-btns rv d3">
+        <div class="hero-badge"><div class="badge-dot"></div>Vancouver's Motorized Blinds Specialists</div>
+        <h1 class="hero-h1">Custom <em>Motorized Blinds</em> <br>Vancouver</h1>
+        <p class="hero-sub">Remote, app and voice-controlled blinds &mdash; available across our full range of zebra, roller, blackout, faux wood, honeycomb and vertical blinds. Wired, battery, rechargeable and solar power options, with Alexa, Google Home and Apple HomeKit compatibility. Free in-home measurement and professional installation.</p>
+        <div class="hero-btns">
           <a href="#contact" class="btn-fill"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Get a Free Motorized Blinds Quote</a>
           <a href="#types" class="btn-outline">View Product Types</a>
         </div>
-        <div class="hero-trust rv d4">
+        <div class="hero-trust">
           <div class="trust-pill"><span class="trust-pill-icon">&#9733;</span> 5.0 Google Rating</div>
           <div class="trust-div"></div>
           <div class="trust-pill"><span class="trust-pill-icon">&#10003;</span> 500+ Homes Done</div>
@@ -422,19 +461,19 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
           <div class="trust-pill"><span class="trust-pill-icon">&#127968;</span> Free In-Home Visit</div>
         </div>
       </div>
-      <div class="hero-right rv d2">
-        <div class="hero-img-card">
-          <img src="../blind install.png" alt="Professional motorized blind installation in a Metro Vancouver home">
-          <div class="hero-img-overlay"></div>
-          <div class="hero-img-tag">
-            <div class="hero-img-tag-icon">&#128241;</div>
-            <div><p class="hero-img-tag-t">Remote, App &amp; Voice Control</p><p class="hero-img-tag-s">Wired &middot; Battery &middot; Solar</p></div>
+      <div class="hero-right">
+        <div class="hero-form-panel">
+          <div class="form-card form-card--glass">
+            <p class="form-card-eyebrow">Request a Free In-Home Consultation</p>
+            <form id="heroForm" action="https://formsubmit.co/smiblinds@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Free Estimate Request - SMI Blinds (Motorized Hero Form)"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://smiblinds.com/thank-you.html"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+              <div class="frow"><div class="fg"><label>First Name</label><input type="text" id="hfn" name="first_name" placeholder="Sarah" required></div><div class="fg"><label>Last Name</label><input type="text" id="hln" name="last_name" placeholder="Mitchell"></div></div>
+              <div class="frow"><div class="fg"><label>Phone</label><input type="tel" id="hph" name="phone" placeholder="778-000-0000"></div><div class="fg"><label>Email</label><input type="email" id="hem" name="email" placeholder="you@email.com" required></div></div>
+              <div class="frow"><div class="fg"><label>City</label><input type="text" id="hct" name="city" placeholder="Vancouver"></div><div class="fg"><label>Blind Type</label><select id="hbt" name="blind_type"><option value="" disabled>Select a type</option><option selected>Motorized Blinds</option><option>Zebra Blinds</option><option>Roller Shades</option><option>Blackout Blinds</option><option>Faux Wood Blinds</option><option>Honeycomb Blinds</option><option>Vertical Blinds</option><option>Not Sure Yet</option></select></div></div>
+              <div class="fg"><label>Message</label><textarea id="hmsg" name="message" placeholder="Tell us about your project &mdash; number of windows, power preference, smart-home system&hellip;"></textarea></div>
+              <button class="f-btn" type="submit">Request Free Estimate &rarr;</button>
+              <p class="f-note">We reply within a few hours &nbsp;&middot;&nbsp; No obligation &nbsp;&middot;&nbsp; Serving Metro Vancouver</p>
+            </form>
           </div>
-        </div>
-        <div class="hero-stars-card">
-          <div class="hsc-n">5.0</div>
-          <span class="hsc-s">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <div class="hsc-l">Google Reviews</div>
         </div>
       </div>
     </div>
