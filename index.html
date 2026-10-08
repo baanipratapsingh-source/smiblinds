@@ -380,6 +380,14 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
   .hero-btns{flex-direction:column;align-items:stretch}.btn-fill,.btn-outline{justify-content:center}
   .foot-grid{grid-template-columns:1fr}
 }
+@media(min-width:901px) and (max-width:1100px){.nav-w{padding:0 22px}.nav-links{gap:14px}.nav-links a{white-space:nowrap;font-size:12px;letter-spacing:.03em}.nav-cta{padding:10px 16px!important}}
+#installation{background:var(--cream2)}
+.inst-home{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:center}
+.inst-home-img{border-radius:20px;overflow:hidden;box-shadow:var(--sh-md);height:380px}
+.inst-home-img img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.inst-home-pts{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.inst-home-pts span{background:var(--white);border:1px solid var(--line2);border-radius:100px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--text2)}
+@media(max-width:900px){.inst-home{grid-template-columns:1fr;gap:30px}.inst-home-img{height:260px}}
 </style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
@@ -427,6 +435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
+      <li><a href="blind-installation-vancouver/">Installation</a></li>
       <li><a href="tel:7789320696" class="nav-phone" onclick="return gtag_report_conversion('tel:7789320696');"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>778-932-0696</a></li>
       <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
     </ul>
@@ -468,6 +477,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </details>
   <a href="#gallery" onclick="cm()">Gallery</a>
   <a href="#reviews" onclick="cm()">Reviews</a>
+  <a href="blind-installation-vancouver/" onclick="cm()">Installation</a>
   <a href="tel:7789320696" class="mphone" onclick="cm();return gtag_report_conversion('tel:7789320696');">778-932-0696</a>
   <a href="#contact" class="mcta" onclick="cm()">Free Estimate</a>
 </div>
@@ -665,9 +675,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="why-items">
           <div class="why-row rv d2"><div class="why-ico">&#128208;</div><div><p class="why-row-t">Free In-Home Measurement</p><p class="why-row-d">We come to you, measure every window precisely, and bring real fabric samples &mdash; zero pressure, zero obligation.</p></div></div>
           <div class="why-row rv d3"><div class="why-ico">&#9986;</div><div><p class="why-row-t">Custom Made to Your Windows</p><p class="why-row-d">Every blind fabricated to your exact dimensions &mdash; no standard sizing, no gaps, no compromises.</p></div></div>
-          <div class="why-row rv d4"><div class="why-ico">&#128295;</div><div><p class="why-row-t">Professional Same-Day Install</p><p class="why-row-d">Fast, clean, and guaranteed. Serving Vancouver, Surrey, Langley, Burnaby, Coquitlam &amp; Richmond.</p></div></div>
+          <div class="why-row rv d4"><div class="why-ico">&#128295;</div><div><p class="why-row-t">Professional Same-Day Install</p><p class="why-row-d">Fast, clean, and guaranteed. Serving Vancouver, Surrey, Langley, Burnaby, Coquitlam &amp; Richmond. <a href="blind-installation-vancouver/" style="color:var(--brown);font-weight:600;text-decoration:underline;text-underline-offset:3px">See how our measure &amp; install works&nbsp;&rarr;</a></p></div></div>
           <div class="why-row rv d5"><div class="why-ico">&#11088;</div><div><p class="why-row-t">5-Star Satisfaction Guarantee</p><p class="why-row-d">We&rsquo;re not done until you love the result. Every installation is fully guaranteed.</p></div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="installation" class="sec">
+  <div class="sec-w">
+    <div class="inst-home">
+      <div class="inst-home-img rv"><img src="patio-door-zebra-blinds-wide.jpg" alt="Newly installed zebra blinds covering a full wall of sliding glass doors, photographed by SMI right after installation" loading="lazy"></div>
+      <div>
+        <p class="sec-tag rv">Measure &amp; Install</p>
+        <h2 class="sec-title rv d1">Professional Blind Installation, <br><em>Measured &amp; Installed by One Team</em></h2>
+        <p class="sec-sub rv d2">You don&rsquo;t measure anything yourself. We measure every window for free, make your blinds to those exact sizes, then install, level and test them &mdash; most homes are finished in a single visit.</p>
+        <div class="inst-home-pts rv d3"><span>&#128208; Free in-home measuring</span><span>&#128295; Same-day professional install</span><span>&#11088; Satisfaction guaranteed</span></div>
+        <a href="blind-installation-vancouver/" class="btn-fill rv d4">See How Our Installation Works &rarr;</a>
       </div>
     </div>
   </div>
@@ -792,7 +816,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </details>
       <details class="faq-item">
         <summary>How does your process work from consultation to installation?</summary>
-        <p>Book a free in-home visit, and a specialist measures your windows and shows you real fabric samples on the spot. Once you approve your order, we fabricate your custom blinds and schedule a professional, same-day installation &mdash; backed by our satisfaction guarantee.</p>
+        <p>Book a free in-home visit, and a specialist measures your windows and shows you real fabric samples on the spot. Once you approve your order, we fabricate your custom blinds and schedule a professional, same-day installation &mdash; backed by our satisfaction guarantee. <a href="blind-installation-vancouver/" style="color:var(--brown);font-weight:600;text-decoration:underline;text-underline-offset:3px">More about our installation process</a>.</p>
       </details>
     </div>
   </div>
@@ -853,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="foot-col">
         <p class="foot-h">Products</p>
-        <ul><li><a href="zebra-blinds-vancouver/">Zebra Blinds</a></li><li><a href="roller-shades-vancouver/">Roller Shades</a></li><li><a href="blackout-blinds-vancouver/">Blackout Blinds</a></li><li><a href="vertical-blinds-vancouver/">Vertical Blinds</a></li><li><a href="motorized-blinds-vancouver/">Motorized Blinds</a></li><li><a href="faux-wood-blinds-vancouver/">Faux Wood Blinds</a></li><li><a href="honeycomb-blinds-vancouver/">Honeycomb Blinds</a></li><li><a href="patio-door-blinds-vancouver/">Patio &amp; Sliding Door Blinds</a></li></ul>
+        <ul><li><a href="zebra-blinds-vancouver/">Zebra Blinds</a></li><li><a href="roller-shades-vancouver/">Roller Shades</a></li><li><a href="blackout-blinds-vancouver/">Blackout Blinds</a></li><li><a href="vertical-blinds-vancouver/">Vertical Blinds</a></li><li><a href="motorized-blinds-vancouver/">Motorized Blinds</a></li><li><a href="faux-wood-blinds-vancouver/">Faux Wood Blinds</a></li><li><a href="honeycomb-blinds-vancouver/">Honeycomb Blinds</a></li><li><a href="patio-door-blinds-vancouver/">Patio &amp; Sliding Door Blinds</a></li><li><a href="blind-installation-vancouver/">Blind Installation</a></li></ul>
       </div>
       <div class="foot-col">
         <p class="foot-h">Service Areas</p>
