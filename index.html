@@ -235,6 +235,7 @@ img{display:block;width:100%;object-fit:cover}
 .prod-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .prod-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.prod-row2.prod-pair{grid-template-columns:repeat(2,1fr);max-width:860px;margin:20px auto 0}
 .prod-card{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--line);transition:transform .45s var(--ease),box-shadow .45s var(--ease);position:relative;cursor:pointer}
 .prod-card:hover{transform:translateY(-10px);box-shadow:var(--sh-lg)}
 .prod-img{height:240px;overflow:hidden;position:relative}.prod-img img{height:100%;width:100%;object-fit:cover;transition:transform .7s var(--ease)}.prod-card:hover .prod-img img{transform:scale(1.07)}
@@ -372,6 +373,7 @@ footer{background:var(--navy-d);padding:70px 0 30px;border-top:3px solid var(--b
   .frow{grid-template-columns:1fr}.form-card{padding:26px 20px}
 }
 @media(max-width:600px){
+  .prod-row2.prod-pair{grid-template-columns:1fr;max-width:420px}
   .prod-grid{grid-template-columns:1fr}.prod-row2{grid-template-columns:1fr}
   .areas-grid{grid-template-columns:1fr}
   .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:none}.gi:nth-child(n){grid-column:span 1;grid-row:span 1}.gi img{min-height:200px}
@@ -612,7 +614,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-    <div class="prod-row2" style="grid-template-columns:1fr;max-width:420px;margin:20px auto 0">
+    <div class="prod-row2 prod-pair">
       <div class="prod-card rv d1">
         <div class="prod-img"><a href="motorized-blinds-vancouver/"><img src="blind install.png" alt="Motorized blinds installation Vancouver BC"></a></div>
         <span class="prod-badge">Smart Home Ready</span>
@@ -621,6 +623,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="prod-name"><a href="motorized-blinds-vancouver/">Motorized Blinds</a></h3>
           <p class="prod-desc">Remote, app and voice control &mdash; available across every style we offer.</p>
           <a href="motorized-blinds-vancouver/" class="prod-cta">View Motorized Blinds <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="prod-card rv d2">
+        <div class="prod-img"><a href="patio-door-blinds-vancouver/"><img src="sliding-door-zebra-blinds-split.jpg" alt="Zebra blinds split over a sliding patio door, installed by SMI in Metro Vancouver" style="object-position:50% 60%"></a></div>
+        <span class="prod-badge">Patio &amp; Sliding Doors</span>
+        <div class="prod-body">
+          <div class="prod-icon">&#128682;</div>
+          <h3 class="prod-name"><a href="patio-door-blinds-vancouver/">Patio Door Blinds</a></h3>
+          <p class="prod-desc">Vertical, zebra, roller &amp; motorized options built around privacy, glare and easy access to the door.</p>
+          <a href="patio-door-blinds-vancouver/" class="prod-cta">View Patio Door Blinds <span class="arr">&rarr;</span></a>
         </div>
       </div>
     </div>
