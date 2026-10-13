@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Submitted lead email START (for on-page display + Google Ads enhanced conversions) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function(){
+        var em = '';
+        try { em = sessionStorage.getItem('smiLeadEmail') || ''; } catch(_) {}
+        window.smiLeadEmail = em;
+        if (em) {
+          window.dataLayer.push({ event: 'lead_email_ready', lead_email: em });
+          gtag('set', 'user_data', { email: em });
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+          if (!em) return;
+          document.getElementById('leadEmail').textContent = em;
+          document.getElementById('leadEmailWrap').hidden = false;
+        });
+      })();
+    </script>
+    <!-- Submitted lead email END -->
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -89,6 +109,7 @@ p.sub{font-size:19px}
 .btn-ghost{border:2px solid rgba(45,49,66,.3)}
 footer{font-size:15px}
 /* === 55+ READABILITY END === */
+.lead-email{color:var(--navy);font-weight:700;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -107,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
     </div>
     <h1>Thank You, Your Request Is In!</h1>
-    <p class="sub">One of our specialists will review your project details and reach out within a few hours to schedule your free in-home estimate.</p>
+    <p class="sub">One of our specialists will review your project details and reach out<span id="leadEmailWrap" hidden> at <strong id="leadEmail" class="lead-email"></strong></span> within a few hours to schedule your free in-home estimate.</p>
     <div class="details">
       <p><strong>What happens next:</strong></p>
       <p>1. We'll call or email you to confirm a time that works for you.</p>

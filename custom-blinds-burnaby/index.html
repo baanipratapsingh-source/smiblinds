@@ -1032,5 +1032,17 @@ function cm(){open=false;hbg.classList.remove('open');mob.classList.remove('open
 var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
 </script>
+<!-- Thank-you email handoff START -->
+<script>
+(function(){
+  document.addEventListener('submit', function(e){
+    var f = e.target;
+    if (!f || !f.action || f.action.indexOf('smi-forms.baani.workers.dev') === -1) return;
+    var em = f.querySelector('input[name="email"]');
+    try { if (em && em.value) sessionStorage.setItem('smiLeadEmail', em.value.trim()); } catch(_) {}
+  }, true);
+})();
+</script>
+<!-- Thank-you email handoff END -->
 </body>
 </html>
