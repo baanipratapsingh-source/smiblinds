@@ -478,13 +478,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 @media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}.mq-t{animation:none}html{scroll-behavior:auto}}
 /* === 55+ READABILITY END === */
 /* END-OF-YEAR DEALS (remove all: .eoy{display:none}) */
-.eoy-note{margin:2px 0 12px;padding:10px 14px;border-radius:10px;background:#fdf1e3;border:1px solid rgba(139,69,19,.28);color:#5a2d0c;font-size:15px;font-weight:600;line-height:1.45;text-align:center}
-.eoy-note strong{color:#8b4513}
-.eoy-pill{display:inline-block;background:#fdf1e3;color:#8b4513;font-weight:800;font-size:14px;letter-spacing:.04em;padding:7px 14px;border-radius:100px;margin-bottom:14px}
+:root{--eoy-h:44px}
+.eoy-bar{position:fixed;top:0;left:0;right:0;z-index:950;height:var(--eoy-h);display:flex;align-items:center;justify-content:center;gap:12px;padding:0 14px;color:#fff!important;text-decoration:none;font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;background:linear-gradient(90deg,#7a3a10,#c8702a 30%,#e8a04d 50%,#c8702a 70%,#7a3a10);background-size:200% 100%;animation:eoyShine 6s linear infinite;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.eoy-bar strong{font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+.eoy-bar-cta{background:#fff;color:#8b4513;font-weight:900;padding:5px 14px;border-radius:100px;font-size:14px}
+.eoy-bar:hover .eoy-bar-cta{background:#fdf1e3}
+.eoy-gift{display:inline-block;animation:eoyWiggle 2.4s ease-in-out infinite}
+@keyframes eoyShine{0%{background-position:0% 0}100%{background-position:200% 0}}
+@keyframes eoyWiggle{0%,70%,100%{transform:rotate(0)}75%{transform:rotate(-14deg) scale(1.15)}85%{transform:rotate(12deg) scale(1.15)}}
+@keyframes eoyGlow{0%,100%{box-shadow:0 0 0 0 rgba(232,160,77,.55)}50%{box-shadow:0 0 0 10px rgba(232,160,77,0)}}
+body.has-eoy{padding-top:var(--eoy-h)}
+body.has-eoy #nav{top:var(--eoy-h)}
+.eoy-bar--flow{position:relative}
+.eoy-note{margin:4px 0 14px;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#c8702a,#8b4513);border:none;color:#fff;font-size:15.5px;font-weight:600;line-height:1.45;text-align:center;box-shadow:0 6px 18px rgba(139,69,19,.35);animation:eoyGlow 2.6s ease-in-out infinite}
+.eoy-note strong{color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:.03em}
+.eoy-pill{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e8a04d,#c8702a);color:#fff!important;font-weight:900;font-size:15px;letter-spacing:.05em;text-transform:uppercase;padding:9px 18px;border-radius:100px;margin-bottom:16px;box-shadow:0 6px 18px rgba(200,112,42,.4);animation:eoyGlow 2.6s ease-in-out infinite}
+@media(max-width:900px){:root{--eoy-h:40px}.eoy-bar{font-size:13px;gap:7px;padding:0 8px}.eoy-bar-d{display:none}.eoy-bar-cta{font-size:13px;padding:4px 11px}.eoy-pill{font-size:13px;padding:8px 14px}}
+@media(max-width:360px){.eoy-bar strong{font-size:12.5px}.eoy-bar-cta{display:none}}
+@media(prefers-reduced-motion:reduce){.eoy-bar,.eoy-gift,.eoy-note,.eoy-pill{animation:none!important}}
 </style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-<body>
+<body class="has-eoy">
+<a href="#contact" class="eoy-bar eoy"><span class="eoy-gift">&#127873;</span><strong>End-of-Year Deals Are Here!</strong><span class="eoy-bar-d">Limited-time savings on custom blinds</span><span class="eoy-bar-cta">Claim Yours &rarr;</span></a>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53V8GCPM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -638,7 +655,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="cta1" class="cta-mid">
   <div class="cta-grid">
     <div>
-      <span class="eoy-pill eoy rv">&#127873; Discover Our End-of-Year Deals</span>
+      <span class="eoy-pill eoy rv"><span class="eoy-gift">&#127873;</span> End-of-Year Deals &mdash; Limited Time</span>
       <h2 class="cta-heading rv">Not sure which blind <br>fits your <em>West Van home?</em></h2>
       <p class="cta-sub rv d1">We'll walk you through every option, in your home &nbsp;&middot;&nbsp; Free consultation</p>
     </div>
@@ -772,6 +789,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="cta2" class="cta-mid">
   <div class="cta-grid">
     <div>
+      <span class="eoy-pill eoy rv"><span class="eoy-gift">&#127873;</span> End-of-Year Deals &mdash; Limited Time</span>
       <h2 class="cta-heading rv">Ready to see it <br><em>in your own light?</em></h2>
       <p class="cta-sub rv d1">Free in-home consultation, no pressure &nbsp;&middot;&nbsp; Serving all of West Vancouver</p>
     </div>
@@ -954,7 +972,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="cta">
   <div class="cta-grid">
     <div>
-      <span class="eoy-pill eoy rv">&#127873; Discover Our End-of-Year Deals</span>
+      <span class="eoy-pill eoy rv"><span class="eoy-gift">&#127873;</span> End-of-Year Deals &mdash; Limited Time</span>
       <h2 class="cta-heading rv">Ready to upgrade your <br><em>West Vancouver</em> windows?</h2>
       <p class="cta-sub rv d1">Discreet in-home consultation &nbsp;&middot;&nbsp; No pressure &nbsp;&middot;&nbsp; No obligation</p>
     </div>
@@ -991,7 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="frow"><div class="fg"><label>Phone</label><input type="tel" id="ph" name="phone" placeholder="778-000-0000" required inputmode="tel" autocomplete="tel" pattern="(\+?1[ .\-]?)?\(?\d{3}\)?[ .\-]?\d{3}[ .\-]?\d{4}" title="Please enter a 10-digit phone number, e.g. 778-555-1234"></div><div class="fg"><label>Email</label><input type="email" id="em" name="email" placeholder="you@email.com" required></div></div>
             <div class="frow"><div class="fg"><label>Neighbourhood</label><input type="text" id="ct" placeholder="British Properties"></div><div class="fg"><label>Blind Type</label><select id="bt" name="blind_type"><option value="" disabled selected>Select a type</option><option>Motorized Blinds</option><option>Zebra Blinds</option><option>Roller Shades</option><option>Blackout Blinds</option><option>Faux Wood Blinds</option><option>Honeycomb Blinds</option><option>Vertical Blinds</option><option>Not Sure Yet</option></select></div></div>
             <div class="fg"><label>Message</label><textarea id="msg" name="message" placeholder="Tell us about your project &mdash; number of windows, rooms, fabric preferences&hellip;"></textarea></div>
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAFP-xsQeSsTy2rJ7" data-size="flexible" style="margin:4px 0 12px"></div><p class="eoy-note eoy">&#127873; <strong>End-of-Year Deals</strong> are on now &mdash; ask about them at your free in-home consultation.</p><button class="f-btn" type="submit">Book Free In-Home Consultation &rarr;</button>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAFP-xsQeSsTy2rJ7" data-size="flexible" style="margin:4px 0 12px"></div><p class="eoy-note eoy"><span class="eoy-gift">&#127873;</span> <strong>End-of-Year Deals are ON!</strong> Limited time &mdash; ask about them at your free in-home consultation.</p><button class="f-btn" type="submit">Book Free In-Home Consultation &rarr;</button>
             <p class="f-note">We reply within a few hours &nbsp;&middot;&nbsp; No obligation &nbsp;&middot;&nbsp; Serving West Vancouver &amp; Metro Vancouver</p>
           </form>
           <div class="f-success" id="fSuccess"><h3>Request Received!</h3><p>Thank you! We'll be in touch within a few hours to schedule your free in-home consultation.</p></div>
